@@ -17,23 +17,36 @@ let answArr = [
     },
 
     {
-        1: 'Japan',
+        1: 'Australia',
         2: 'Azerbaijan',
-        3: 'Australia',
+        3: 'Japan',
         4: 'Canada',
     }]
 
-function next() {
+let answerVariants = []
+let correcrAnswers = ['b', 'd', 'c', 'a']
+function answerCheck(x) {
+    radio = x;
+    answerVariants.push(x.dataset.variant)
+}
+
+function next(x) {
     if (count == 3) {
+        for(let i = 0; i < answerVariants.length; i++){
+            if(answerVariants[i] != correcrAnswers[i]){
+                answerVariants.shift()
+            }
+        }
         document.querySelector('div').className = 'none';
-
-        document.body.innerHTML += '<h1 id="congrats">Congratulations the questions are over!</h1>'
+        x.innerText = 'Submit';
+        document.body.innerHTML += `<h1 id="congrats">Congratulations the questions are over!</h1><h1>${answerVariants.length} / ${correcrAnswers.length}</h1>`;
     }
-
+    
     document.querySelector('h1').innerText = textArr[count];
     document.querySelectorAll('label').forEach(function (element) {
         element.innerText = `${answArr[count][count2]}`;
         count2++
+        radio.checked = false;
     })
     count2 = 1;
     count++;

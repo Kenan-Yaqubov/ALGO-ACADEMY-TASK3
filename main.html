@@ -16,23 +16,23 @@
         <h1 style="margin-top: 80px;">What is the biggest country in the world?</h1>
         <form action="">
             <div class="flex">
-                <input type="radio" name="" id="">
-                <label>America</label>
+                <input type="radio" data-variant="a" onclick="answerCheck(this)" id="radio1" name="variant">
+                <label for="radio1">America</label>
             </div>
             <div class="flex">
-                <input type="radio" name="" id="">
-                <label>Russia</label>
+                <input type="radio" data-variant="b" onclick="answerCheck(this)" id="radio2" name="variant">
+                <label for="radio2">Russia</label>
             </div>
             <div class="flex">
-                <input type="radio" name="" id="">
-                <label>China</label>
+                <input type="radio" data-variant="c" onclick="answerCheck(this)" id="radio3" name="variant">
+                <label for="radio3">China</label>
             </div>
             <div class="flex">
-                <input type="radio" name="" id="">
-                <label>India</label>
+                <input type="radio" data-variant="d" onclick="answerCheck(this)" id="radio4" name="variant">
+                <label for="radio4">India</label>
             </div>
         </form>
-        <button type="button" onclick="next()" style="bottom: 40px;right: 60px;transform: none;">Next -></button>
+        <button type="button" onclick="next(this)" style="bottom: 40px;right: 60px;transform: none;">Next -></button>
     </div>
     <script src="script.js"></script>
 </body>
